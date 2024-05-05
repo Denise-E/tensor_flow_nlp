@@ -157,10 +157,10 @@ class SubjectModel:
         #print("PADDED SHAPE", training_padded.shape) #Filas x columns 
 
         model = tf.keras.Sequential([
-            tf.keras.layers.Embedding(cls.vocab_size, cls.embedding_dim, input_length=cls.max_length),  #https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding
-            tf.keras.layers.GlobalAveragePooling1D(), #https://www.tensorflow.org/api_docs/python/tf/keras/layers/GlobalAveragePooling1D
-            tf.keras.layers.Dense(24, activation='relu'), #https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense
-            tf.keras.layers.Dense(1, activation='sigmoid') #https://keras.io/api/layers/core_layers/dense/
+            tf.keras.layers.Embedding(cls.vocab_size, cls.embedding_dim, input_length=cls.max_length), 
+            tf.keras.layers.GlobalAveragePooling1D(), 
+            tf.keras.layers.Dense(24, activation='relu'), 
+            tf.keras.layers.Dense(1, activation='sigmoid')
         ])
 
         #Model configuration
@@ -207,5 +207,7 @@ class SubjectModel:
 
 
 subject_model = SubjectModel()
-prediction_1 = subject_model.model_prediction_tests(sentence = ["Solicitud cotizacion póliza del hogar"])
+sentences = ["Solicitud cotizacion póliza del hogar", "Solicitud póliza del hogar"]
+prediction_1 = subject_model.model_prediction_tests(sentence=sentences)
+print("SENTENCES:",sentences)
 print("PREDICTION:", prediction_1)
