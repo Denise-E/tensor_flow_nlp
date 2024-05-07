@@ -1,10 +1,3 @@
-"""
-"Denuncia de Siniestro", "Denuncia de siniestro", "denuncia de siniestro", "Presupuestos Solicitados",
-"Vacacioná en hotel xxx",  "Por favor cotizar"
-
-https://chat.openai.com/c/e19c84a6-c752-46e5-b8d4-1f2643fc9d31
-"""
-
 import tensorflow as tf
 from tensorflow import keras
 from keras.preprocessing.text import Tokenizer

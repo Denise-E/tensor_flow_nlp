@@ -139,8 +139,8 @@ class SubjectModel:
             "solicitud presupuestos a cargar",
             "solicitud Por favor cotizar",
             "solicitud cotización"
-        ] #116 casos, 41 tokens
-        # 1 = se vincula a nuetsros tramites, 0 = no se vincula
+        ] #116 casos, 51 tokens
+        # 1 = se vincula a nuestros tramites, 0 = no se vincula
         training_labels = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] 
 
         # 2. Tokenización de las sentencias
@@ -149,13 +149,13 @@ class SubjectModel:
         tokenizer.fit_on_texts(sentences)
         cls.tokenizer = tokenizer
         word_indexed = tokenizer.word_index
-        print("indexed  WORDS", word_indexed)
+        print("Indexed  WORDS", word_indexed)
 
         training_sentences = tokenizer.texts_to_sequences(sentences)
         training_padded = pad_sequences(training_sentences,maxlen=cls.max_length, padding='post') #Hay que deifnirle max_length por concordancia con resto del proceso
         print("PADDED", training_padded)
         #print("PADDED SHAPE", training_padded.shape) #Filas x columns 
-
+        
         model = tf.keras.Sequential([
             tf.keras.layers.Embedding(cls.vocab_size, cls.embedding_dim, input_length=cls.max_length), 
             tf.keras.layers.GlobalAveragePooling1D(), 
@@ -190,7 +190,7 @@ class SubjectModel:
         testing_padded = np.array(testing_padded)
         testing_labels = np.array(testing_labels)
 
-        num_epochs = 1000 #Trains the model for a fixed number of epochs (dataset iterations).
+        num_epochs = 10 #Trains the model for a fixed number of epochs (dataset iterations).
         print("TEST RESULTS")
         history = model.fit(training_padded, training_labels, epochs=num_epochs, validation_data=(testing_padded, testing_labels), verbose=2)
         """
@@ -203,11 +203,16 @@ class SubjectModel:
     def model_prediction_tests(cls, sentence: str) -> list[list[int]]:
         sequences = cls.tokenizer.texts_to_sequences(sentence)
         padded = pad_sequences(sequences, maxlen=cls.max_length, padding=cls.padding_type, truncating=cls.trunc_type)
-        return cls.model.predict(padded).tolist() 
+        prediction = cls.model.predict(padded).tolist() 
+        return prediction
 
 
 subject_model = SubjectModel()
-sentences = ["Solicitud cotizacion póliza del hogar", "Solicitud póliza del hogar"]
+sentences = ["Solicitud cotizacion póliza del hogar", "Solicitud póliza del hogar", "Que seas feliz"]
 prediction_1 = subject_model.model_prediction_tests(sentence=sentences)
 print("SENTENCES:",sentences)
-print("PREDICTION:", prediction_1)
+print("PREDICTION:", prediction_1) 
+
+# 0.8957 - 0.80
+# Predict iterando 1000 veces [[0.8933809995651245], [0.892857551574707], [0.8909379839897156]]
+# Predict iterando 2000 veces [[0.8990367650985718], [0.8960583806037903], [0.8848827481269836]]
