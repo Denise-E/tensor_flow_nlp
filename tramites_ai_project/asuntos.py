@@ -138,10 +138,44 @@ class SubjectModel:
             "solicitud Carga de presupuestos",
             "solicitud presupuestos a cargar",
             "solicitud Por favor cotizar",
-            "solicitud cotización"
+            "solicitud cotización",
+            "Necesito cotización",
+            "Necesito póliza",
+            "Necesito presupuesto",
+            "Cotización de pólizas de la casa",
+            "Cotizacion de polizas de la casa",
+            "Cotización de pólizas casa",
+            "Cotizacion de polizas casa",
+            "Cotización de pólizas vivienda",
+            "Cotizacion de polizas vivienda",
+            "Cotización de pólizas depto",
+            "Cotizacion de polizas depto",
+            "Cotización de pólizas departamento",
+            "Cotizacion de polizas departamento",
+            "Cotización de polizas veiculo",
+            "Cotizacion de pólizas veiculo",
+            "Cotizacion de polizas veiculo",
+            "Cotisasión de pólizas veiculo",
+            "Cotisasión de polizas veiculo",
+            "Cotisasion de pólizas veiculo",
+            "Cotisasion de polizas veiculo",
+            "Cotisasión de pólizas de auto",
+            "Cotisasión de polizas de auto",
+            "Cotisasion de pólizas de auto",
+            "Cotisasion de polizas de auto",
+            "Cotización de pólizas vehiculo",
+            "Cotización de polizas vehiculo",
+            "Cotizacion de pólizas vehiculo",
+            "Cotizacion de polizas vehiculo",
+            "Cotisasión de pólizas vehiculo",
+            "Cotisasión de polizas vehiculo",
+            "Cotisasion de pólizas vehiculo",
+            "Cotisasion de polizas vehiculo",
+            "polisas de auto",
+            "pólisas de auto",
         ] #116 casos, 51 tokens
         # 1 = se vincula a nuestros tramites, 0 = no se vincula
-        training_labels = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] 
+        training_labels = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] 
 
         # 2. Tokenización de las sentencias
         # No distingue minusculas y mayúsculas, tampoco simbolos. Si reconoce acentos.
@@ -190,7 +224,7 @@ class SubjectModel:
         testing_padded = np.array(testing_padded)
         testing_labels = np.array(testing_labels)
 
-        num_epochs = 10 #Trains the model for a fixed number of epochs (dataset iterations).
+        num_epochs = 1000 #Trains the model for a fixed number of epochs (dataset iterations).
         print("TEST RESULTS")
         history = model.fit(training_padded, training_labels, epochs=num_epochs, validation_data=(testing_padded, testing_labels), verbose=2)
         """
