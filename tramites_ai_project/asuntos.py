@@ -275,7 +275,7 @@ class SubjectModel:
         testing_padded = np.array(testing_padded)
         testing_labels = np.array(testing_labels)
 
-        num_epochs = 2000 #Trains the model for a fixed number of epochs (dataset iterations).
+        num_epochs = 3000 #Trains the model for a fixed number of epochs (dataset iterations).
         print("TEST RESULTS")
         history = model.fit(training_padded, training_labels, epochs=num_epochs, validation_data=(testing_padded, testing_labels), verbose=2)
         """
@@ -291,7 +291,7 @@ class SubjectModel:
         print("PADDED", padded)
         prediction = cls.model.predict(padded)
         #return [prediction.tolist() , np.argmax(prediction,axis=-1)]
-        return [prediction.tolist() , (prediction > 0.7).astype("int32")] #Valor a ajustar una vez que vaya sumando casos para la capacitación del modelo
+        return [prediction.tolist() , (prediction > 0.6).astype("int32")] #Valor a ajustar una vez que vaya sumando casos para la capacitación del modelo
 
 
 subject_model = SubjectModel()
