@@ -24,36 +24,36 @@ class SubjectModel:
     def model_config_and_training(cls):
         # 1. Definición de los strings de capacitación 
         sentences = [ 
-            "Denuncia de Siniestro",
-            "Denuncia de un siniestro",
-            "Denuncia siniestro",
+            "denuncia de Siniestro",
+            "denuncia de un siniestro",
+            "denuncia siniestro",
             "siniestro",
             "denuncia",
-            "Presupuestos Solicitados",
+            "presupuestos Solicitados",
             "presupuestos",
             "cotizacion",
-            "Cotización de pólizas de auto",
-            "Cotización de polizas de auto",
-            "Cotizacion de pólizas de auto",
-            "Cotizacion de polizas de auto",
+            "cotización de pólizas de auto",
+            "cotización de polizas de auto",
+            "cotizacion de pólizas de auto",
+            "cotizacion de polizas de auto",
             "polizas de auto",
             "pólizas de auto",
-            "Cotización de pólizas del hogar",
-            "Cotizacion de polizas del hogar",
+            "cotización de pólizas del hogar",
+            "cotizacion de polizas del hogar",
             "polizas del hogar",
             "pólizas del hogar",
-            "Cotización pólizas auto",
-            "Cotización polizas auto",
-            "Cotizacion pólizas auto",
-            "Cotizacion polizas auto",
+            "cotización pólizas auto",
+            "cotización polizas auto",
+            "cotizacion pólizas auto",
+            "cotizacion polizas auto",
             "polizas auto",
             "pólizas auto",
-            "Cotización pólizas hogar",
-            "Cotización polizas hogar",
+            "cotización pólizas hogar",
+            "cotización polizas hogar",
             "polizas hogar",
             "pólizas hogar",
-            "Vacaciones!", 
-            "Descuentos solo para vos",
+            "vacaciones!", 
+            "descuentos solo para vos",
             "solicitud Denuncia de Siniestro",
             "solicitud Denuncia de un siniestro",
             "solicitud Denuncia siniestro",
@@ -110,16 +110,16 @@ class SubjectModel:
             "pedido Cotización polizas hogar",
             "pedido polizas hogar",
             "pedido pólizas hogar",
-            "Conocé Datadog",
-            "Conoce Datadog",
-            "Feliz cumpleaños",
+            "conocé Datadog",
+            "conoce Datadog",
+            "feliz cumpleaños",
             "conocé nuestras ofertas",
             "conoce nuestros beneficios",
             "nuevo mensaje",
             "descubre todas las novedades",
-            "Últimos días",
-            "Nuevo lanzamiento",
-            "Nuevos lanzamientos",
+            "últimos días",
+            "nuevo lanzamiento",
+            "nuevos lanzamientos",
             "pedido Cotización de polizas del hogar",
             "pedido Cotizacion de pólizas del hogar",
             "pedido Vacaciones en Mardel",
@@ -139,43 +139,73 @@ class SubjectModel:
             "solicitud presupuestos a cargar",
             "solicitud Por favor cotizar",
             "solicitud cotización",
-            "Necesito cotización",
-            "Necesito póliza",
-            "Necesito presupuesto",
-            "Cotización de pólizas de la casa",
-            "Cotizacion de polizas de la casa",
-            "Cotización de pólizas casa",
-            "Cotizacion de polizas casa",
-            "Cotización de pólizas vivienda",
-            "Cotizacion de polizas vivienda",
-            "Cotización de pólizas depto",
-            "Cotizacion de polizas depto",
-            "Cotización de pólizas departamento",
-            "Cotizacion de polizas departamento",
-            "Cotización de polizas veiculo",
-            "Cotizacion de pólizas veiculo",
-            "Cotizacion de polizas veiculo",
-            "Cotisasión de pólizas veiculo",
-            "Cotisasión de polizas veiculo",
-            "Cotisasion de pólizas veiculo",
-            "Cotisasion de polizas veiculo",
-            "Cotisasión de pólizas de auto",
-            "Cotisasión de polizas de auto",
-            "Cotisasion de pólizas de auto",
-            "Cotisasion de polizas de auto",
-            "Cotización de pólizas vehiculo",
-            "Cotización de polizas vehiculo",
-            "Cotizacion de pólizas vehiculo",
-            "Cotizacion de polizas vehiculo",
-            "Cotisasión de pólizas vehiculo",
-            "Cotisasión de polizas vehiculo",
-            "Cotisasion de pólizas vehiculo",
-            "Cotisasion de polizas vehiculo",
+            "necesito cotización",
+            "necesito póliza",
+            "necesito presupuesto",
+            "cotización de pólizas de la casa",
+            "cotizacion de polizas de la casa",
+            "cotización de pólizas casa",
+            "cotizacion de polizas casa",
+            "cotización de pólizas vivienda",
+            "cotizacion de polizas vivienda",
+            "cotización de pólizas depto",
+            "cotizacion de polizas depto",
+            "cotización de pólizas departamento",
+            "cotizacion de polizas departamento",
+            "cotización de polizas veiculo",
+            "cotizacion de pólizas veiculo",
+            "cotizacion de polizas veiculo",
+            "cotisasión de pólizas veiculo",
+            "cotisasión de polizas veiculo",
+            "cotisasion de pólizas veiculo",
+            "cotisasion de polizas veiculo",
+            "cotisasión de pólizas de auto",
+            "cotisasión de polizas de auto",
+            "cotisasion de pólizas de auto",
+            "cotisasion de polizas de auto",
+            "cotización de pólizas vehiculo",
+            "cotización de polizas vehiculo",
+            "cotizacion de pólizas vehiculo",
+            "cotizacion de polizas vehiculo",
+            "cotisasión de pólizas vehiculo",
+            "cotisasión de polizas vehiculo",
+            "cotisasion de pólizas vehiculo",
+            "cotisasion de polizas vehiculo",
             "polisas de auto",
             "pólisas de auto",
+            "¡gana un millón de dólares ahora!",
+            "oferta especial: ¡Descuento del 50 porciento de descuento solo por hoy!",
+            "aumenta tu puntaje de crédito al instante",
+            "¡compra seguidores y likes para tus redes sociales!",
+            "conoce a solteros locales cerca de ti",
+            "reunión de equipo esta tarde a las 3 p.m.",
+            "confirmación de reserva para la conferencia",
+            "actualización semanal del proyecto",
+            "recuerda enviar el informe antes del viernes",
+            "invitación a la presentación del nuevo producto",
+            "¡gana un iPhone gratis!",
+            "¡oferta exclusiva: descuento del 70% en productos electrónicos!",
+            "aumenta tus seguidores en redes sociales al instante",
+            "¡deshazte de la deuda en 24 horas!",
+            "¡sorteo de vacaciones todo incluido!",
+            "¡conoce solteros calientes en tu área!",
+            "¡baja de peso rápidamente con esta pastilla milagrosa!",
+            "¡dinero fácil y rápido: hazte rico en una semana!",
+            "¡prueba gratis nuestro producto y gana una tarjeta de regalo!",
+            "¡increíble oportunidad de inversión con altos rendimientos!",
+            "¡descubre el secreto para una piel perfecta!",
+            "¡aprovecha esta oferta única: préstamos sin intereses!",
+            "¡gana un viaje de lujo a las Bahamas!",
+            "¡incrementa tus ingresos con este sistema probado!",
+            "¡obtén un préstamo sin verificación de crédito!",
+            "¡haz crecer tu negocio con nuestro software revolucionario!",
+            "¡oferta limitada: suscríbete ahora y recibe un descuento adicional!",
+            "¡descubre cómo ganar dinero desde casa!",
+            "¡productos de belleza gratis solo por registrarte!",
+            "¡tu cuenta ha sido seleccionada para recibir un premio especial!",
         ] #116 casos, 51 tokens
         # 1 = se vincula a nuestros tramites, 0 = no se vincula
-        training_labels = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] 
+        training_labels = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] 
 
         # 2. Tokenización de las sentencias
         # No distingue minusculas y mayúsculas, tampoco simbolos. Si reconoce acentos.
@@ -204,27 +234,48 @@ class SubjectModel:
 
         # Model testing
         testing_sentences = [
-            "Cotización de polizas del hogar", 
-            "Cotizacion de pólizas del hogar", 
-            "Vacaciones en Mardel", 
-            "Promoción en ropa",
-            "Cotizacion pólizas hogar",
-            "Cotizacion polizas hogar",
-            "Carga de presupuestos",
+            "cotización de polizas del hogar", 
+            "cotizacion de pólizas del hogar", 
+            "vacaciones en Mardel", 
+            "promoción en ropa",
+            "cotizacion pólizas hogar",
+            "cotizacion polizas hogar",
+            "carga de presupuestos",
             "presupuestos a cargar",
-            "Por favor cotizar",
-            "cotización"
+            "por favor cotizar",
+            "cotización",
+            
+            "recordatorio de pago de factura pendiente",
+            "confirmación de reserva de hotel",
+            "actualización de política de privacidad",
+            "información sobre cambios en el horario de atención al cliente",
+            "recordatorio de cita médica",
+            "confirmación de registro en el evento",
+            "notificación de entrega de paquete",
+            "resumen mensual de cuenta bancaria",
+            "invitación a evento de networking empresarial",
+            "actualización sobre el estado de tu solicitud",
+            "confirmación de reserva de vuelo",
+            "recordatorio de fecha de vencimiento de suscripción",
+            "informe de rendimiento trimestral",
+            "recordatorio de reunión de equipo",
+            "confirmación de compra en línea",
+            "invitación a participar en encuesta de satisfacción",
+            "notificación de cambio de contraseña de cuenta",
+            "resumen de actividad en la cuenta de redes sociales",
+            "recordatorio de renovación de membresía",
+            "invitación a seminario web sobre desarrollo profesional"
         ] #10
         testing_sentences = tokenizer.texts_to_sequences(testing_sentences)
         testing_padded = pad_sequences(testing_sentences, maxlen=cls.max_length, padding='post') 
-        testing_labels = [1,1,0,0,1,1,1,1,1,1]
+        testing_labels = [1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
         training_padded = np.array(training_padded)
         training_labels = np.array(training_labels)
         testing_padded = np.array(testing_padded)
         testing_labels = np.array(testing_labels)
 
-        num_epochs = 1000 #Trains the model for a fixed number of epochs (dataset iterations).
+        num_epochs = 2000 #Trains the model for a fixed number of epochs (dataset iterations).
         print("TEST RESULTS")
         history = model.fit(training_padded, training_labels, epochs=num_epochs, validation_data=(testing_padded, testing_labels), verbose=2)
         """
@@ -237,12 +288,14 @@ class SubjectModel:
     def model_prediction_tests(cls, sentence: str) -> list[list[int]]:
         sequences = cls.tokenizer.texts_to_sequences(sentence)
         padded = pad_sequences(sequences, maxlen=cls.max_length, padding=cls.padding_type, truncating=cls.trunc_type)
-        prediction = cls.model.predict(padded).tolist() 
-        return prediction
+        print("PADDED", padded)
+        prediction = cls.model.predict(padded)
+        #return [prediction.tolist() , np.argmax(prediction,axis=-1)]
+        return [prediction.tolist() , (prediction > 0.7).astype("int32")] #Valor a ajustar una vez que vaya sumando casos para la capacitación del modelo
 
 
 subject_model = SubjectModel()
-sentences = ["Solicitud cotizacion póliza del hogar", "Solicitud póliza del hogar", "Que seas feliz"]
+sentences = ["solicitud cotizacion póliza del hogar", "solicitud póliza del hogar", "que seas feliz", "vacaciones en Mardel", "notificación membresia", "notificación membresía"]
 prediction_1 = subject_model.model_prediction_tests(sentence=sentences)
 print("SENTENCES:",sentences)
 print("PREDICTION:", prediction_1) 
@@ -250,3 +303,9 @@ print("PREDICTION:", prediction_1)
 # 0.8957 - 0.80
 # Predict iterando 1000 veces [[0.8933809995651245], [0.892857551574707], [0.8909379839897156]]
 # Predict iterando 2000 veces [[0.8990367650985718], [0.8960583806037903], [0.8848827481269836]]
+
+"""
+Con más casos que retornan 0
+["solicitud cotizacion póliza del hogar", "solicitud póliza del hogar", "que seas feliz", "vacaciones en Mardel", "notificación membresia", "notificación membresía"]
+[0.9988852143287659], [0.9937644004821777], [0.5036671161651611], [0.6806588172912598], [0.6968783736228943], [0.6968783736228943]]
+"""
